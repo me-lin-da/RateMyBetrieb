@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="dbd7l37u3arqmv@ec2-52-31-70-136.eu-west-1.compute.amazonaws.com" uuid="bf820a91-7fc0-42c0-bffb-2e72b0beadb6">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-52-31-70-136.eu-west-1.compute.amazonaws.com:5432/dbd7l37u3arqmv</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="andrisDB" uuid="968d61ba-7dd6-4380-bc55-6d43e64ac32a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-75-184-144.eu-west-1.compute.amazonaws.com:5432/de3h6hmgi4g499</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

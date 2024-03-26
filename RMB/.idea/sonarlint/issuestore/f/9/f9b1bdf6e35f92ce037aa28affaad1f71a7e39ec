@@ -1,0 +1,9 @@
+
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ıŸ» ÿÿÿÿÿ
+V
+java:S4684"@Replace this persistent entity with a simple POJO or DTO object.(ğâå
+o
+java:S6204'"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8£¾Æ‹ª0
+z
+java:S1612&"^Replace this lambda with method reference 'orderPositionMapper::orderpositionToOnlyAmountDTO'.(«èú8´±‰Å¸0
