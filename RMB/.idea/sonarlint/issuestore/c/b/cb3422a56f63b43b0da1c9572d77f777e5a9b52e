@@ -1,5 +1,0 @@
-
-o
-java:S6204'"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8úƒ—“º0
-i
-java:S1612&"LReplace this lambda with method reference 'teaMapper::teaToTeaDTOWithoutID'.(ù¡’û8ûƒ—“º0

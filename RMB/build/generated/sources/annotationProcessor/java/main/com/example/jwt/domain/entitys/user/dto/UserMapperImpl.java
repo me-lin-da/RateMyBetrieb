@@ -2,11 +2,9 @@ package com.example.jwt.domain.entitys.user.dto;
 
 import com.example.jwt.domain.entitys.authority.Authority;
 import com.example.jwt.domain.entitys.authority.dto.AuthorityDTO;
-import com.example.jwt.domain.entitys.ranking.Rank;
-import com.example.jwt.domain.entitys.ranking.dto.RankDTO;
+import com.example.jwt.domain.entitys.role.Role;
+import com.example.jwt.domain.entitys.role.dto.RoleDTO;
 import com.example.jwt.domain.entitys.user.User;
-import com.example.jwt.domain.role.Role;
-import com.example.jwt.domain.role.dto.RoleDTO;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -16,7 +14,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-01-09T14:57:57+0100",
+    date = "2024-04-23T14:42:02+0200",
     comments = "version: 1.5.2.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-7.5.jar, environment: Java 17.0.3 (JetBrains s.r.o.)"
 )
 @Component
@@ -35,7 +33,6 @@ public class UserMapperImpl implements UserMapper {
         user.setFirstName( dto.getFirstName() );
         user.setLastName( dto.getLastName() );
         user.setEmail( dto.getEmail() );
-        user.setRank( rankDTOToRank( dto.getRank() ) );
         user.setAge( dto.getAge() );
 
         return user;
@@ -79,7 +76,6 @@ public class UserMapperImpl implements UserMapper {
 
         userDTO.setId( BO.getId() );
         userDTO.setAge( BO.getAge() );
-        userDTO.setRank( rankToRankDTO( BO.getRank() ) );
         userDTO.setFirstName( BO.getFirstName() );
         userDTO.setLastName( BO.getLastName() );
         userDTO.setEmail( BO.getEmail() );
@@ -133,38 +129,6 @@ public class UserMapperImpl implements UserMapper {
         user.setAge( dto.getAge() );
 
         return user;
-    }
-
-    protected Rank rankDTOToRank(RankDTO rankDTO) {
-        if ( rankDTO == null ) {
-            return null;
-        }
-
-        Rank rank = new Rank();
-
-        rank.setId( rankDTO.getId() );
-        rank.setDiscount( rankDTO.getDiscount() );
-        rank.setTitle( rankDTO.getTitle() );
-        rank.setSeeds( rankDTO.getSeeds() );
-        rank.setReduction( rankDTO.getReduction() );
-
-        return rank;
-    }
-
-    protected RankDTO rankToRankDTO(Rank rank) {
-        if ( rank == null ) {
-            return null;
-        }
-
-        RankDTO rankDTO = new RankDTO();
-
-        rankDTO.setId( rank.getId() );
-        rankDTO.setTitle( rank.getTitle() );
-        rankDTO.setSeeds( rank.getSeeds() );
-        rankDTO.setReduction( rank.getReduction() );
-        rankDTO.setDiscount( rank.getDiscount() );
-
-        return rankDTO;
     }
 
     protected Authority authorityDTOToAuthority(AuthorityDTO authorityDTO) {

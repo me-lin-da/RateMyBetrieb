@@ -1,7 +1,6 @@
 package com.example.jwt.domain.entitys.user.dto;
 
 import com.example.jwt.core.generic.ExtendedDTO;
-import com.example.jwt.domain.entitys.ranking.dto.RankDTO;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
@@ -11,7 +10,6 @@ public class UserDTO extends ExtendedDTO {
     private Integer age;
     @Min(value = 0)
     private Integer seeds;
-    private RankDTO rank;
 
     private String firstName;
 
@@ -31,15 +29,6 @@ public class UserDTO extends ExtendedDTO {
 
     public UserDTO setAge(Integer age) {
         this.age = age;
-        return this;
-    }
-
-    public RankDTO getRank() {
-        return rank;
-    }
-
-    public UserDTO setRank(RankDTO rank) {
-        this.rank = rank;
         return this;
     }
 

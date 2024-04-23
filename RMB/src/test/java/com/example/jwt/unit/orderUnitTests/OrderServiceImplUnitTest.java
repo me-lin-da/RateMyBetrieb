@@ -1,21 +1,19 @@
 package com.example.jwt.unit.orderUnitTests;
 
-import com.example.jwt.domain.entitys.country.Country;
+import com.example.jwt.domain.entitys.review.Country;
 import com.example.jwt.domain.entitys.order.Order;
 import com.example.jwt.domain.entitys.order.OrderRepository;
 import com.example.jwt.domain.entitys.order.OrderService;
 import com.example.jwt.domain.entitys.order.OrderServiceImpl;
-import com.example.jwt.domain.entitys.order.dto.OrderMapper;
 import com.example.jwt.domain.entitys.ranking.Rank;
 import com.example.jwt.domain.entitys.ranking.RankService;
 import com.example.jwt.domain.entitys.teas.Tea;
 import com.example.jwt.domain.entitys.teas.TeaService;
-import com.example.jwt.domain.entitys.teatype.TeaType;
+import com.example.jwt.domain.entitys.company.TeaType;
 import com.example.jwt.domain.entitys.user.User;
 import com.example.jwt.domain.entitys.user.UserService;
 import com.example.jwt.domain.orderposition.OrderPosition;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;

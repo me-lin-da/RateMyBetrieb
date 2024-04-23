@@ -6,4 +6,4 @@ In Spring Security 5.7.0-M2 the WebSecurityConfigurerAdapter became deprecated, 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Theran isch doof
+Theran isch cool

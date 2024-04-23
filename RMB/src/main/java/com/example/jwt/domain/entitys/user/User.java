@@ -1,8 +1,7 @@
 package com.example.jwt.domain.entitys.user;
 
 import com.example.jwt.core.generic.ExtendedAuditEntity;
-import com.example.jwt.domain.entitys.ranking.Rank;
-import com.example.jwt.domain.role.Role;
+import com.example.jwt.domain.entitys.role.Role;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -34,8 +33,6 @@ public class User extends ExtendedAuditEntity {
     @Column(name = "password")
     private String password;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    private Rank rank;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -48,7 +45,7 @@ public class User extends ExtendedAuditEntity {
     public User() {
     }
 
-    public User(UUID id, Integer seeds, Integer age, String firstName, String lastName, String email, String password, Rank rank, Set<Role> roles) {
+    public User(UUID id, Integer seeds, Integer age, String firstName, String lastName, String email, String password, Set<Role> roles) {
         super(id);
         this.seeds = seeds;
         this.age = age;
@@ -56,7 +53,6 @@ public class User extends ExtendedAuditEntity {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.rank = rank;
         this.roles = roles;
     }
 
@@ -99,15 +95,6 @@ public class User extends ExtendedAuditEntity {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Rank getRank() {
-        return rank;
-    }
-
-    public User setRank(Rank rank) {
-        this.rank = rank;
-        return this;
     }
 
     public Set<Role> getRoles() {

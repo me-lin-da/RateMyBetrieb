@@ -1,12 +1,10 @@
 package com.example.jwt.domain.entitys.user;
 
 import com.example.jwt.core.generic.ExtendedServiceImpl;
-import com.example.jwt.domain.entitys.ranking.Rank;
-import com.example.jwt.domain.entitys.ranking.RankService;
 import com.example.jwt.domain.entitys.user.dto.UserRabatDTO;
-import com.example.jwt.domain.role.Role;
-import com.example.jwt.domain.role.RoleServiceImpl;
-import com.example.jwt.domain.role.RoleValue;
+import com.example.jwt.domain.entitys.role.Role;
+import com.example.jwt.domain.entitys.role.RoleServiceImpl;
+import com.example.jwt.domain.entitys.role.RoleValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,15 +21,12 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    private final RankService rankService;
-
     private final RoleServiceImpl roleServiceImpl;
 
     @Autowired
-    public UserServiceImpl(UserRepository repository, BCryptPasswordEncoder bCryptPasswordEncoder, RankService rankService, RoleServiceImpl roleServiceImpl) {
+    public UserServiceImpl(UserRepository repository, BCryptPasswordEncoder bCryptPasswordEncoder, RoleServiceImpl roleServiceImpl) {
         super(repository);
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-        this.rankService = rankService;
         this.roleServiceImpl = roleServiceImpl;
     }
 
@@ -48,10 +43,8 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
 
     @Override
     public User register(User user) {
-        Rank rank = rankService.findByTitle("bronze");
         Role role = roleServiceImpl.findByName("USER");
         user.setRoles(Collections.singleton(role));
-        user.setRank(rank);
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         return save(user);
     }
@@ -83,9 +76,6 @@ public class UserServiceImpl extends ExtendedServiceImpl<User> implements UserSe
     public User lockUser(UUID id) {
         if (getRepository().existsById(id)) {
             User user = findById(id);
-            if (user.getRank().getTitle() != RoleValue.ADMIN.getValue()) {
-                user.setNotLocked(false);
-            }
             return save(user);
         } else {
             throw new NoSuchElementException(String.format("Entity with ID '%s' could not be found", id));
