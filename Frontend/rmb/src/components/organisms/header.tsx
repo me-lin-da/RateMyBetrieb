@@ -22,8 +22,8 @@ const Header = () => {
     />
   );
   return (
-    <header className="bg-secondary text-white py-4">
-      <div className="container mx-auto flex justify-between">
+    <header className="bg-secondary py-4">
+      <div className="container mx-auto flex justify-between w-2/3">
         <div className="flex items-center">
           <img
             src={Logo}
