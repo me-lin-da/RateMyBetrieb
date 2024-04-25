@@ -1,14 +1,22 @@
 import "./App.css";
-import Header from "./components/organisms/header";
 import RMB from "./components/pages/RMB";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout";
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
-      <RMB />
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <RMB />,
+        },
+      ],
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
         placeholder="Search..."
         value={searchQuery}
         onChange={handleInputChange}
-        className=" w-2/5 p-3 text-cyan-600"
+        className=" w-2/5 p-3 text-main "
       />
     </form>
   );
