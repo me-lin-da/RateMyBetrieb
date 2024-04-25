@@ -20,13 +20,12 @@ const Card = ({
 }: CardProps) => {
   return (
     <div>
-      <div className="flex flex-row bg-slate-600">
+      <div className="flex flex-row bg-main">
         <Logo photosrc={photosrc} alt={alt} />
         <Title companyName={companyName} description={description} />
         <div className="m-auto items-end">
-          <p>
-            Rating: <Rating rating={rating} />
-            /10
+          <p className="text-white">
+            Rating: <Rating rating={rating} /> /10
           </p>
         </div>
       </div>
