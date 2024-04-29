@@ -13,8 +13,8 @@ const CompanyPage = () => {
       <div className="relative bg-gray-400 w-3/5 mx-auto h-full mt-10">
         <div className="flex flex-col rounded-lg">
           <Company />
+          <AddComment onSubmit={handleSubmit} />
           <div className="flex flex-row flex-wrap mt-10">
-            <AddComment onSubmit={handleSubmit} />
             <Comment />
             <Comment />
             <Comment />

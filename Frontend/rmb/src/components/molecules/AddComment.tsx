@@ -17,7 +17,7 @@ const AddComment = ({ onSubmit }: AddCommentProps) => {
   };
 
   return (
-    <div className="w-1/3 flex flex-row bg-main rounded-2xl border-none shadow-2xl shadow-gray-800 p-10 m-1">
+    <div className="w-full flex flex-row bg-main rounded-2xl border-none shadow-2xl shadow-gray-800 p-10 m-1">
       <textarea
         className=" w-full h-full bg-main text-white rounded-2xl"
         placeholder="Add a comment..."
