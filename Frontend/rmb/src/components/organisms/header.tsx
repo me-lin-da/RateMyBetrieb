@@ -10,9 +10,9 @@ const Header = () => {
     console.log("Item clicked");
   };
   const menuItems = [
-    { label: "Item 1", action: handleItemClick },
-    { label: "Item 2", action: handleItemClick },
-    { label: "Item 3", action: handleItemClick },
+    { label: "Celine Sinzig", action: handleItemClick },
+    { label: "View Account", action: handleItemClick },
+    { label: "Log Out", action: handleItemClick },
   ];
   const imageTrigger = (
     <img
@@ -25,11 +25,13 @@ const Header = () => {
     <header className="bg-secondary py-4">
       <div className="container mx-auto flex justify-between w-2/3">
         <div className="flex items-center">
-          <img
-            src={Logo}
-            className="flex items-center btn-icon max-w-80 max-h-12 m-auto"
-            alt="Logo"
-          />
+          <a href="/">
+            <img
+              src={Logo}
+              className="flex items-center btn-icon max-w-80 max-h-12 m-auto"
+              alt="Logo"
+            />
+          </a>
         </div>
         <div className="flex-grow mx-8">
           <SearchBar onSearch={OnSearch} />

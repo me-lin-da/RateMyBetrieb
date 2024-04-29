@@ -19,17 +19,19 @@ const Card = ({
   rating,
 }: CardProps) => {
   return (
-    <div>
-      <div className="flex flex-row bg-main rounded-lg">
-        <Logo photosrc={photosrc} alt={alt} />
-        <Title companyName={companyName} description={description} />
-        <div className="m-auto items-end">
-          <p className="text-white">
-            Rating: <Rating rating={rating} /> /10
-          </p>
+    <a href="/CompanyPage">
+      <div>
+        <div className="flex flex-row bg-main rounded-lg">
+          <Logo photosrc={photosrc} alt={alt} />
+          <Title companyName={companyName} description={description} />
+          <div className="m-auto items-end">
+            <p className="text-white">
+              Rating: <Rating rating={rating} /> /10
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
