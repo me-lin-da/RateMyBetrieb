@@ -8,7 +8,7 @@ interface ButtonProps {
 const Button = ({ onClick, label }: ButtonProps) => {
   return (
     <button
-      className="btn inline-flex bg-blue-900 px-4 py-2 rounded-md text-white align-middle text-center text-base font-medium tracking-wide hover:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-500"
+      className="btn inline-flex bg-blue-900 px-4 py-2 rounded-md text-white align-middle text-center text-base font-medium tracking-wide duration-300 hover:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-500"
       onClick={onClick}
     >
       {label}

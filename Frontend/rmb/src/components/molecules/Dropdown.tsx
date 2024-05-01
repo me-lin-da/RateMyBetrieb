@@ -33,7 +33,7 @@ const Dropdown = ({ items, triggerElement }: DropdownProps) => {
                 <button
                   key={index}
                   onClick={() => handleItemClick()}
-                  className="block px-4 py-2 text-sm text-secondary w-full text-left bg-main hover:bg-secondary hover:text-main"
+                  className="block px-4 py-2 text-sm text-secondary w-full text-left bg-main duration-300 hover:bg-secondary hover:text-main"
                 >
                   {item.label}
                 </button>

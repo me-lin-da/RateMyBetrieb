@@ -14,7 +14,7 @@ const Header = () => {
   const imageTrigger = (
     <img
       src={Account}
-      className="flex items-center btn-icon max-w-80 max-h-12 m-auto hover:bg-main rounded-full"
+      className="flex items-center btn-icon max-w-80 max-h-12 m-auto duration-300 hover:bg-main rounded-full"
       alt="Logo"
     />
   );

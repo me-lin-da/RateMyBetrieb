@@ -25,7 +25,7 @@ const AddComment = ({ onSubmit }: AddCommentProps) => {
         onChange={handleChange}
       />
       <button
-        className="bg-secondary text-black rounded-2xl hover:bg-third"
+        className="bg-secondary text-black rounded-2xl duration-300 hover:bg-third"
         onClick={handleSubmit}
       >
         Add Comment
