@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "../molecules/searchfield";
 import Logo from "../../assets/IDLogo.jpeg";
 import Account from "../../assets/Account.png";
@@ -6,13 +6,10 @@ import Dropdown from "../molecules/Dropdown";
 
 const Header = () => {
   const OnSearch = () => {};
-  const handleItemClick = () => {
-    console.log("Item clicked");
-  };
+
   const menuItems = [
-    { label: "Celine Sinzig", action: handleItemClick },
-    { label: "View Account", action: handleItemClick },
-    { label: "Log Out", action: handleItemClick },
+    { label: "Celine Sinzig", link: "/" },
+    { label: "Log In", link: "/login" },
   ];
   const imageTrigger = (
     <img
