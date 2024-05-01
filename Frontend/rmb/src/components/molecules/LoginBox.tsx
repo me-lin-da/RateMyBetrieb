@@ -7,24 +7,25 @@ const LoginBox: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Here you can add your logic for authentication
     if (username === "admin" && password === "password") {
-      // Successful login
       console.log("Login successful");
       setError("");
     } else {
-      // Failed login
       setError("Invalid username or password");
     }
   };
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-10 rounded-lg shadow-md"
+        className="bg-main text-white p-10 rounded-lg shadow-md"
       >
         <h2 className="text-2xl mb-4">Login</h2>
-        {error && <div className="text-red-500 mb-4">{error}</div>}
+        {error && (
+          <div className="w-3/5 rounded-2xl bg-third m-1 p-1 h-full">
+            {error}
+          </div>
+        )}
         <div className="mb-4">
           <label htmlFor="username" className="block mb-1">
             Username
@@ -34,7 +35,7 @@ const LoginBox: React.FC = () => {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+            className="w-full px-3 py-2 border rounded-md focus:border-third"
           />
         </div>
         <div className="mb-4">
@@ -46,12 +47,12 @@ const LoginBox: React.FC = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-400"
+            className="w-full px-3 py-2 border rounded-md focus:border-third"
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 transition duration-300"
+          className="w-1/5 mt-2 bg-secondary text-white py-2 rounded-md hover:bg-third transition duration-300"
         >
           Login
         </button>
