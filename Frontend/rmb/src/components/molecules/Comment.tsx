@@ -3,8 +3,8 @@ import React from "react";
 const Comment = () => {
   return (
     <div className="flex flex-col w-1/3">
-      <div className="flex flex-row bg-main rounded-2xl border-none shadow-2xl shadow-gray-800 p-10 m-1">
-        <div className="flex flex-col m-auto w-full gap-4">
+      <div className="flex flex-row bg-main rounded-2xl border-none shadow-2xl shadow-gray-8008 m-1">
+        <div className="flex flex-col m-auto w-full gap-4 p-8">
           <h1 className="text-white font-bold text-xl">Celine Sinzig</h1>
           <p className="text-white truncate">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sed

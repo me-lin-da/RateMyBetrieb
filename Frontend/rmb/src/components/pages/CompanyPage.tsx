@@ -10,11 +10,13 @@ const CompanyPage = () => {
   };
   return (
     <div>
-      <div className="relative bg-gray-400 w-3/5 mx-auto h-full mt-10">
+      <div className="container mx-auto px-4 bg-gray-400 h-full mt-10">
         <div className="flex flex-col rounded-lg">
           <Company />
-          <AddComment onSubmit={handleSubmit} />
-          <div className="flex flex-row flex-wrap mt-10">
+          <div className="flex flex-wrap mt-5">
+            <AddComment onSubmit={handleSubmit} />
+          </div>
+          <div className="flex flex-row flex-wrap mt-5">
             <Comment />
             <Comment />
             <Comment />

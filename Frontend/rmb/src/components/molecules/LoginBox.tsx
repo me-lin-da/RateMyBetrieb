@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../atoms/button";
 
 const LoginBox: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -18,13 +19,11 @@ const LoginBox: React.FC = () => {
     <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
       <form
         onSubmit={handleSubmit}
-        className="bg-main text-white p-10 rounded-lg shadow-md"
+        className="bg-main text-white p-8 rounded-lg shadow-md"
       >
         <h2 className="text-2xl mb-4">Login</h2>
         {error && (
-          <div className="w-3/5 rounded-2xl bg-third m-1 p-1 h-full">
-            {error}
-          </div>
+          <div className="w-3/5 rounded-md bg-third p-1.5 h-full">{error}</div>
         )}
         <div className="mb-4">
           <label htmlFor="username" className="block mb-1">
@@ -35,7 +34,7 @@ const LoginBox: React.FC = () => {
             id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:border-third"
+            className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>
         <div className="mb-4">
@@ -47,15 +46,12 @@ const LoginBox: React.FC = () => {
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:border-third"
+            className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>
-        <button
-          type="submit"
-          className="w-1/5 mt-2 bg-secondary text-white py-2 rounded-md hover:bg-third transition duration-300"
-        >
-          Login
-        </button>
+        <div className="flex justify-center">
+          <Button label="Login" onSubmit={handleSubmit} />
+        </div>
       </form>
     </div>
   );

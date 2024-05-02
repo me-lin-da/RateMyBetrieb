@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "../atoms/button";
 
 interface AddCommentProps {
   onSubmit: (comment: string) => void;
@@ -17,19 +18,14 @@ const AddComment = ({ onSubmit }: AddCommentProps) => {
   };
 
   return (
-    <div className="w-full flex flex-row bg-main rounded-2xl border-none shadow-2xl shadow-gray-800 p-10 m-1">
+    <div className="w-full flex flex-row bg-main rounded-2xl border-none shadow-2xl shadow-gray-800 p-8">
       <textarea
-        className=" w-full h-full bg-main text-white rounded-2xl"
+        className=" w-full h-full bg-main text-white rounded-md"
         placeholder="Add a comment..."
         value={comment}
         onChange={handleChange}
       />
-      <button
-        className="bg-secondary text-black rounded-2xl duration-300 hover:bg-third"
-        onClick={handleSubmit}
-      >
-        Add Comment
-      </button>
+      <Button onClick={handleSubmit} label={"Add Comment"} />
     </div>
   );
 };

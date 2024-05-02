@@ -3,12 +3,13 @@ import React from "react";
 interface ButtonProps {
   onClick?: () => void;
   label?: string;
+  onSubmit?: (e: any) => void;
 }
 
 const Button = ({ onClick, label }: ButtonProps) => {
   return (
     <button
-      className="btn inline-flex bg-blue-900 px-4 py-2 rounded-md text-white align-middle text-center text-base font-medium tracking-wide duration-300 hover:bg-blue-800 focus:outline-none focus:ring focus:ring-blue-500"
+      className="w-1/5 mt-2 bg-secondary text-white py-2 rounded-md hover:bg-third transition duration-300"
       onClick={onClick}
     >
       {label}
