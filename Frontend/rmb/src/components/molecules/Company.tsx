@@ -19,7 +19,7 @@ const Company = () => {
           alt="elhu"
         />
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-8">
         <h1 className="text-7xl -ml-1 text-white font-bold">Interdiscount</h1>
         <div className="text-white text-xl">
           <p>

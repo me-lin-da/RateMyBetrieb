@@ -16,7 +16,7 @@ const CompanyPage = () => {
           <div className="flex flex-wrap mt-5">
             <AddComment onSubmit={handleSubmit} />
           </div>
-          <div className="flex flex-row flex-wrap mt-5">
+          <div className="flex flex-row flex-wrap gap-2 w-1/ mt-5">
             <Comment />
             <Comment />
             <Comment />
