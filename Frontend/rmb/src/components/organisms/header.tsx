@@ -21,7 +21,7 @@ const Header = () => {
   //TODO: Header should match the container size
   return (
     <header className="bg-secondary py-4">
-      <div className="container mx-auto flex justify-between w-2/3">
+      <div className="container mx-auto flex justify-between">
         <div className="flex items-center">
           <a href="/">
             <img

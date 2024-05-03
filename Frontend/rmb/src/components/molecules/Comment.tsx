@@ -2,7 +2,7 @@ import React from "react";
 
 const Comment = () => {
   return (
-    <div className="flex flex-col gap-4 p-8 bg-main rounded-2xl border-none shadow-2xl shadow-gray-8008 w-1/3">
+    <div className="flex flex-col p-8 bg-main rounded-2xl border-none shadow-2xl shadow-gray-8008">
       <h1 className="text-white font-bold text-xl">Celine Sinzig</h1>
       <div className="text-white">
         <p>
