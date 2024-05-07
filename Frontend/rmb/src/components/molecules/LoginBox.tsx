@@ -1,20 +1,29 @@
 import React, { useState } from "react";
 import Button from "../atoms/button";
+import userService from "../../services/userService";
+import { UserSingIn } from "../../types/User.type";
 
-const LoginBox: React.FC = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const LoginBox: React.FC = (setToken) => {
+  const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  console.log("sinzc user", user);
+  function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
-    if (username === "admin" && password === "password") {
-      console.log("Login successful");
-      setError("");
-    } else {
-      setError("Invalid username or password");
-    }
-  };
+
+    userService
+      .login(user)
+      .then((response) => {
+        const accessToken = response.headers.authorization;
+        console.log("sinzc", accessToken);
+
+        if (accessToken) {
+          localStorage.setItem("userAuthToken", accessToken);
+        }
+      })
+      .then(() => window.location.replace("/"));
+  }
+
   return (
     <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
       <form
@@ -32,8 +41,8 @@ const LoginBox: React.FC = () => {
           <input
             type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
             className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>
@@ -44,8 +53,8 @@ const LoginBox: React.FC = () => {
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
             className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>

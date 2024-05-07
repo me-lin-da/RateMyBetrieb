@@ -43,8 +43,6 @@ u
 Esrc/main/java/com/example/jwt/domain/entitys/user/UserRepository.java,0\d\0d73fda62c69f495c47d7456e35f4ff5177581e6
 k
 ;src/main/java/com/example/jwt/core/generic/ExtendedDTO.java,d\1\d17e8af571a859b821612bfa9a5655618f528e3e
-r
-Bsrc/main/java/com/example/jwt/core/security/WebSecurityConfig.java,c\6\c60a5508bfe54f71860ea8fb9b3255bfe588afb8
 {
 Ksrc/main/java/com/example/jwt/core/security/CustomAuthenticationFilter.java,5\7\57376df684b58e53882450428c64465c5bfea06a
 }

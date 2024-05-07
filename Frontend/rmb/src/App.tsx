@@ -4,8 +4,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "./components/Layout";
 import CompanyPage from "./components/pages/CompanyPage";
 import Login from "./components/pages/Login";
+import { useState } from "react";
 
 function App() {
+  // const [token, setToken] = useState();
+
+  // if (!token) {
+  //   return <Login setToken={setToken} />;
+  // }
   const router = createBrowserRouter([
     {
       element: <Layout />,
