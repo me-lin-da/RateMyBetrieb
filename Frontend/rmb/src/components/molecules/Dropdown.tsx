@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 interface MenuItem {
   label: string;
-  action: () => void;
+  link: string;
 }
 
 interface DropdownProps {
@@ -17,8 +17,7 @@ const Dropdown = ({ items, triggerElement }: DropdownProps) => {
     setIsOpen(!isOpen);
   };
 
-  const handleItemClick = (action: () => void) => {
-    action();
+  const handleItemClick = () => {
     toggleDropdown();
   };
 
@@ -30,13 +29,15 @@ const Dropdown = ({ items, triggerElement }: DropdownProps) => {
         <div className="absolute right-0 mt-2 p-0 w-24 shadow-lg bg-white ring-1 ring-opacity-5 z-50 rounded-full">
           <div className="flex-col">
             {items.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => handleItemClick(item.action)}
-                className="block px-4 py-2 text-sm text-secondary w-full text-left bg-main hover:bg-secondary hover:text-main"
-              >
-                {item.label}
-              </button>
+              <a href={item.link}>
+                <button
+                  key={index}
+                  onClick={() => handleItemClick()}
+                  className="block px-4 py-2 text-sm text-secondary w-full text-left bg-main duration-300 hover:bg-secondary hover:text-main"
+                >
+                  {item.label}
+                </button>
+              </a>
             ))}
           </div>
         </div>

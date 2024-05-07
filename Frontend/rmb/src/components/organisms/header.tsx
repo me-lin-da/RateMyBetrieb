@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchBar from "../molecules/searchfield";
 import Logo from "../../assets/IDLogo.jpeg";
 import Account from "../../assets/Account.png";
@@ -6,24 +6,22 @@ import Dropdown from "../molecules/Dropdown";
 
 const Header = () => {
   const OnSearch = () => {};
-  const handleItemClick = () => {
-    console.log("Item clicked");
-  };
+
   const menuItems = [
-    { label: "Celine Sinzig", action: handleItemClick },
-    { label: "View Account", action: handleItemClick },
-    { label: "Log Out", action: handleItemClick },
+    { label: "Celine Sinzig", link: "/" },
+    { label: "Log In", link: "/login" },
   ];
   const imageTrigger = (
     <img
       src={Account}
-      className="flex items-center btn-icon max-w-80 max-h-12 m-auto hover:bg-main rounded-full"
+      className="flex items-center btn-icon max-w-80 max-h-12 m-auto duration-300 hover:bg-main rounded-full"
       alt="Logo"
     />
   );
+  //TODO: Header should match the container size
   return (
     <header className="bg-secondary py-4">
-      <div className="container mx-auto flex justify-between w-2/3">
+      <div className="container mx-auto flex justify-between">
         <div className="flex items-center">
           <a href="/">
             <img
