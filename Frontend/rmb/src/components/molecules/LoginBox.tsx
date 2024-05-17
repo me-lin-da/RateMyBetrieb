@@ -7,21 +7,31 @@ const LoginBox: React.FC = (setToken) => {
   const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
   const [error, setError] = useState("");
 
-  console.log("sinzc user", user);
-  function handleSubmit(e: React.SyntheticEvent) {
+  async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
 
-    userService
-      .login(user)
-      .then((response) => {
-        const accessToken = response.headers.authorization;
-        console.log("sinzc", accessToken);
+    // const response = await userService.login(user);
+    // console.log("sinzc response", response);
+    // const accessToken = response.headers.authorization;
 
-        if (accessToken) {
-          localStorage.setItem("userAuthToken", accessToken);
-        }
-      })
-      .then(() => window.location.replace("/"));
+    const response = await userService.login(user);
+    // .then((response) => {
+    //   console.log("sinzc response", response.headers);
+    console.log("sinzc fick di aute", response);
+
+    const authHeader = response.headers["authorization"];
+    if (authHeader) {
+      // Assuming the header format is "Bearer <token>"
+      const token = authHeader.startsWith("Bearer ")
+        ? authHeader.slice(7)
+        : authHeader;
+      localStorage.setItem("userAuthToken", token);
+    } else {
+      throw new Error("Authorization token not found in response headers");
+    }
+    // });
+
+    // console.log("sinzc", accessToken);
   }
 
   return (

@@ -1,10 +1,11 @@
 import axios from "axios";
 import { UserSingIn } from "../types/User.type";
-import { api } from "./api.service";
 
-async function login(user: UserSingIn) {
-  return await await api().post("/users/login", user, {
-    headers: { "Content-Type": "application/json" },
+function login(user: UserSingIn) {
+  return axios.post("http://localhost:8080/users/login", user, {
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
 }
 

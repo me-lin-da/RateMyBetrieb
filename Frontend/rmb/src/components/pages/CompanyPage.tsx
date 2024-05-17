@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Company from "../molecules/Company";
 import Comment from "../molecules/Comment";
 import AddComment from "../../components/molecules/AddComment";
+import companyService from "../../services/companyService";
 
 const CompanyPage = () => {
   const [companies, setCompanies] = useState([]);
@@ -15,6 +16,9 @@ const CompanyPage = () => {
     .then((data) => setCompanies(data))
     .catch((error) => console.error("Error fetching users:", error));
 
+  let comp = companyService.getAllCompany();
+
+  console.log("sinzc companies", comp);
   //TODO: Comments should be in rows of 3
   return (
     <div className="container mx-auto px-4 bg-gray-400 h-full mt-10">
