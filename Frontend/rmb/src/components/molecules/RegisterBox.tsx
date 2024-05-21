@@ -1,20 +1,15 @@
 import React, { useState } from "react";
 import Button from "../atoms/button";
+import userService from "../../services/userService";
+import { UserSingIn } from "../../types/User.type";
 
 const RegisterBox: React.FC = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
+  const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
   const [error, setError] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (username === "admin" && password === "password") {
-      console.log("Register successful");
-      setError("");
-    } else {
-      setError("Invalid username or password");
-    }
+    userService.register(user);
   };
   return (
     <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
@@ -27,26 +22,14 @@ const RegisterBox: React.FC = () => {
           <div className="w-3/5 rounded-md bg-third p-1.5 h-full">{error}</div>
         )}
         <div className="mb-4">
-          <label htmlFor="Name" className="block mb-1">
-            Name
-          </label>
-          <input
-            type="text"
-            id="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
-          />
-        </div>
-        <div className="mb-4">
           <label htmlFor="username" className="block mb-1">
             Username
           </label>
           <input
             type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
             className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>
@@ -57,8 +40,8 @@ const RegisterBox: React.FC = () => {
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
             className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>

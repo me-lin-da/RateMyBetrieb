@@ -9,4 +9,12 @@ function login(user: UserSingIn) {
   });
 }
 
-export default { login };
+function register(user: UserSingIn) {
+  return axios.post("http://localhost:8080/users/register", user, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+}
+
+export default { login, register };
