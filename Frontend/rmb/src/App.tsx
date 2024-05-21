@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import CompanyPage from "./components/pages/CompanyPage";
 import Login from "./components/pages/Login";
 import { useState } from "react";
+import Register from "./components/pages/Register";
 
 function App() {
   // const [token, setToken] = useState();
@@ -28,6 +29,10 @@ function App() {
           path: "/Login",
           element: <Login />,
         },
+        {
+          path: "/Register",
+          element: <Register />,
+        }
       ],
     },
   ]);
