@@ -1,18 +1,19 @@
 import React from "react";
 
-const Comment = () => {
+interface CommentProps {
+  name?: string;
+  commentText?: string;
+  rating?: number;
+}
+
+const Comment = ({ name, commentText, rating }: CommentProps) => {
   return (
     <div className="flex flex-col p-8 bg-main rounded-2xl border-none shadow-2xl shadow-gray-8008">
-      <h1 className="text-white font-bold text-xl">Celine Sinzig</h1>
+      <h1 className="text-white font-bold text-xl">{name}</h1>
       <div className="text-white">
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sed
-          facilis commodi perspiciatis saepe, nemo, in totam repellendus
-          consequatur quo eligendi, modi animi corrupti. Facilis hic asperiores
-          voluptatibus distinctio necessitatibus!
-        </p>
+        <p>{commentText}</p>
       </div>
-      <p className="text-white">Rating: 10/10</p>
+      <p className="text-white">Rating: {rating}/10</p>
     </div>
   );
 };
