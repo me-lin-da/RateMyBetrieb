@@ -6,7 +6,7 @@ export function api() {
     timeout: 3000,
     headers: {
       "Content-Type": "application/json",
-      Authorization: `${localStorage.getItem("userAuthToken")}`,
+      Authorization: `Bearer ${localStorage.getItem("userAuthToken")}`,
     },
   });
 }

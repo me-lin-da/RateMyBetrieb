@@ -11,10 +11,6 @@ const CompanyPage = () => {
     console.log("Submitted comment:", comment);
     // Here you can add logic to submit the comment to your backend or wherever it needs to be stored
   };
-  fetch("http://localhost:8080/company/all")
-    .then((response) => response.json())
-    .then((data) => setCompanies(data))
-    .catch((error) => console.error("Error fetching users:", error));
 
   let comp = companyService.getAllCompany();
 
