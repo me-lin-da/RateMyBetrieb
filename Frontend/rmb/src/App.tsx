@@ -1,43 +1,46 @@
 import "./App.css";
 import RMB from "./components/pages/RMB";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Route,
+  RouterProvider,
+  Routes,
+} from "react-router-dom";
 import Layout from "./components/Layout";
 import CompanyPage from "./components/pages/CompanyPage";
 import Login from "./components/pages/Login";
 import { useState } from "react";
 import Register from "./components/pages/Register";
+import ProtectedRoute from "./protectedRoute";
+import { AuthProvider } from "./hooks/AuthContext";
 
 function App() {
-  // const [token, setToken] = useState();
-
-  // if (!token) {
-  //   return <Login setToken={setToken} />;
-  // }
-  const router = createBrowserRouter([
-    {
-      element: <Layout />,
-      children: [
-        {
-          path: "/",
-          element: <RMB />,
-        },
-        {
-          path: "/CompanyPage",
-          element: <CompanyPage />,
-        },
-        {
-          path: "/Login",
-          element: <Login />,
-        },
-        {
-          path: "/Register",
-          element: <Register />,
-        }
-      ],
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+  return (
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <RMB />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/CompanyPage"
+            element={
+              <ProtectedRoute>
+                <CompanyPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Register" element={<Register />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
+  );
 }
 
 export default App;
