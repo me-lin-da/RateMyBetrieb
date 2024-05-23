@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "../organisms/Card";
 import CompanyList from "../organisms/Companylist";
 
 const Content = () => {
