@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
 import { log } from "console";
+import companyService from "../../services/companyService";
 
 interface Company {
   photosrc?: string;
@@ -19,9 +20,10 @@ const CompanyList = () => {
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/company");
+        const response = await companyService.getAllCompany();
+
         setCompanies(response.data);
-        console.log(companies)
+        console.log(companies);
       } catch (err) {
         setError("Failed to fetch companies");
       } finally {

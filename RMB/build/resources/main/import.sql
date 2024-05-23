@@ -57,4 +57,6 @@ insert into role_authority(role_id, authority_id) values('48608063-985b-496d-94c
 -- -- insert into orders(id, price, user_id) values('69166737-44c0-4930-8187-8ae6280694af',10,'7f000101-82e9-1989-8182-e98c2a330008');
 -- -- insert into orders(id, price, user_id) values('23f46bbf-e3be-41b2-80d4-40ef2ed3c5ea',20,'7f000101-82e9-1989-8182-e98c2a330008');
 insert into company (id, company_name) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9b7', 'noser young');
-insert into review (id, text, title, company_id) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9b5', 'du chline huso', 'huso', 'fdd3ac59-564e-4327-9c24-2dd52bfdf9b7');
+insert into company (id, company_name) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9b2', 'noser old');
+insert into review (id, text, title, company_id) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9b5', 'test', 'noser young isch cool', 'fdd3ac59-564e-4327-9c24-2dd52bfdf9b7');
+insert into review (id, text, title, company_id) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9a5', 'test2', 'noser old isch cool', 'fdd3ac59-564e-4327-9c24-2dd52bfdf9b2');

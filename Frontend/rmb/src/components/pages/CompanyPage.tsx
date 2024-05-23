@@ -12,9 +12,6 @@ const CompanyPage = () => {
     // Here you can add logic to submit the comment to your backend or wherever it needs to be stored
   };
 
-  let comp = companyService.getAllCompany();
-
-  console.log("sinzc companies", comp);
   //TODO: Comments should be in rows of 3
   return (
     <div className="container mx-auto px-4 bg-gray-400 h-full mt-10">
