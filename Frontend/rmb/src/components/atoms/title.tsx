@@ -6,7 +6,7 @@ interface TitleProps {
 const Title = ({ companyName, description }: TitleProps) => {
   return (
     <div className="m-auto items-center">
-      <h2 className="text-6xl font-bold">{companyName}</h2>
+      <h2 className="text-4xl font-bold text-white">{companyName}</h2>
       <p>{description}</p>
     </div>
   );
