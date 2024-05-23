@@ -5,7 +5,7 @@ interface CommentProps {
   commentText?: string;
   rating?: number;
 }
-
+// comment card
 const Comment = ({ name, commentText, rating }: CommentProps) => {
 
   return (

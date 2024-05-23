@@ -3,7 +3,7 @@ import React, { useState } from "react";
 interface SearchBarProps {
   onSearch: (query: string) => void;
 }
-
+// searchbar
 const SearchBar = ({ onSearch }: SearchBarProps) => {
   const [searchQuery, setSearchQuery] = useState<string>("");
 

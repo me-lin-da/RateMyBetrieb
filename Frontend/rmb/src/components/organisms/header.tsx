@@ -18,7 +18,7 @@ const Header = () => {
       alt="Logo"
     />
   );
-  //TODO: Header should match the container size
+// the header
   return (
     <header className="bg-secondary py-4">
       <div className="container mx-auto flex justify-between">

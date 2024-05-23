@@ -6,7 +6,7 @@ interface CompanyProps {
   rating?: number;
   logo?: string;
 }
-
+// company page
 const Company = ({ title, description, rating, logo }: CompanyProps) => {
   return (
     <div className="bg-main w-full flex flex-row p-8 gap-8 rounded-2xl">

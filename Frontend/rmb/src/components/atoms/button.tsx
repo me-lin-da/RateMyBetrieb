@@ -5,7 +5,7 @@ interface ButtonProps {
   label?: string;
   onSubmit?: (e: any) => void;
 }
-
+// The button component
 const Button = ({ onClick, label }: ButtonProps) => {
   return (
     <button

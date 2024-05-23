@@ -9,7 +9,7 @@ interface Company {
   description?: string;
   rating?: number;
 }
-
+//companylist page
 
 const CompanyList = () => {
     const [companies, setCompanies] = useState<Company[]>([]);
