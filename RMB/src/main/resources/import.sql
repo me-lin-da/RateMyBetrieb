@@ -60,3 +60,5 @@ insert into company (id, company_name, description) values ('fdd3ac59-564e-4327-
 insert into company (id, company_name, description) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9b2', 'Interdiscount', 'A division of COOP');
 insert into review (id, text, title, company_id) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9b5', 'test', 'noser young isch cool', 'fdd3ac59-564e-4327-9c24-2dd52bfdf9b7');
 insert into review (id, text, title, company_id) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9a5', 'test2', 'noser old isch cool', 'fdd3ac59-564e-4327-9c24-2dd52bfdf9b2');
+
+insert into users (id, email, password, is_not_locked) values ('fdd3ac59-564e-4327-9c24-2dd52bfdf9a0', 'test@gmail.com', '$2a$10$8I6ttnD5LxTySiYnpZXjluIPUrJyInl10scwAKAH1PcS9Suuh5DKe', true);

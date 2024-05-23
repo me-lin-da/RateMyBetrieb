@@ -15,9 +15,6 @@ public class User extends ExtendedAuditEntity {
     @Column(name = "isNotLocked")
     private boolean isNotLocked = true;
 
-    @Column(name = "seeds")
-    private Integer seeds = 0;
-
     @Column(name = "age")
     private Integer age;
 
@@ -47,21 +44,12 @@ public class User extends ExtendedAuditEntity {
 
     public User(UUID id, Integer seeds, Integer age, String firstName, String lastName, String email, String password, Set<Role> roles) {
         super(id);
-        this.seeds = seeds;
         this.age = age;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.roles = roles;
-    }
-
-    public Integer getSeeds() {
-        return seeds;
-    }
-
-    public void setSeeds(Integer seeds) {
-        this.seeds = seeds;
     }
 
     public String getFirstName() {

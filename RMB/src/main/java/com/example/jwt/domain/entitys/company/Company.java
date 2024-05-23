@@ -19,6 +19,10 @@ public class Company extends ExtendedAuditEntity {
         this.description = description;
     }
 
+    public Company() {
+
+    }
+
     public String getDescription() {
         return description;
     }

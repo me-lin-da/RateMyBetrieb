@@ -10,14 +10,7 @@ const LoginBox: React.FC = (setToken) => {
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
 
-    // const response = await userService.login(user);
-    // console.log("sinzc response", response);
-    // const accessToken = response.headers.authorization;
-
     const response = await userService.login(user);
-    // .then((response) => {
-    //   console.log("sinzc response", response.headers);
-    console.log("sinzc fick di aute", response);
 
     const authHeader = response.headers["authorization"];
     if (authHeader) {
@@ -29,9 +22,6 @@ const LoginBox: React.FC = (setToken) => {
     } else {
       throw new Error("Authorization token not found in response headers");
     }
-    // });
-
-    // console.log("sinzc", accessToken);
   }
 
   return (

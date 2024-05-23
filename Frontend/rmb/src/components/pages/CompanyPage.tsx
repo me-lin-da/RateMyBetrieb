@@ -7,6 +7,16 @@ import companyService from "../../services/companyService";
 const CompanyPage = () => {
   const [companies, setCompanies] = useState([]);
 
+  useEffect(() => {
+    const fetchCompanies = async () => {
+      const response = await companyService.getAllCompany();
+
+      setCompanies(response.data);
+      console.log(companies);
+    };
+
+    fetchCompanies();
+  }, []);
   const handleSubmit = (comment: string) => {
     console.log("Submitted comment:", comment);
     // Here you can add logic to submit the comment to your backend or wherever it needs to be stored

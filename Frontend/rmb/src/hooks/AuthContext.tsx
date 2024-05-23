@@ -24,16 +24,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setAuthToken(token);
   }, []);
 
-  //   const login = (token: string) => {
-  //     setAuthToken(token);
-  //     localStorage.setItem("userAuthToken", token);
-  //   };
-
-  //   const logout = () => {
-  //     setAuthToken(null);
-  //     localStorage.removeItem("userAuthToken");
-  //   };
-
   console.log(authToken);
 
   return (
