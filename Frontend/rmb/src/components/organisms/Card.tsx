@@ -10,7 +10,7 @@ interface CardProps {
   description?: string;
   rating?: number;
 }
-
+// company card
 const Card = ({
   photosrc,
   alt,

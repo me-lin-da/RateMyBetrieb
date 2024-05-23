@@ -4,7 +4,7 @@ import Button from "../atoms/button";
 interface AddCommentProps {
   onSubmit: (comment: string) => void;
 }
-
+//Addcomment component
 const AddComment = ({ onSubmit }: AddCommentProps) => {
   const [comment, setComment] = useState<string>("");
 

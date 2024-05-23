@@ -4,7 +4,7 @@ interface logoProps {
   photosrc?: string;
   alt?: string;
 }
-
+// The logo component
 const Logo = ({ photosrc, alt }: logoProps) => {
   return (
     <div>

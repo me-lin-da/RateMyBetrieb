@@ -2,7 +2,7 @@ interface TitleProps {
   companyName?: string;
   description?: string;
 }
-
+// The title component
 const Title = ({ companyName, description }: TitleProps) => {
   return (
     <div className="m-auto items-center">

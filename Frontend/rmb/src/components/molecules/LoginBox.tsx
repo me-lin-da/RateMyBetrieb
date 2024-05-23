@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "../atoms/button";
 import userService from "../../services/userService";
 import { UserSingIn } from "../../types/User.type";
-
+//the login box
 const LoginBox: React.FC = (setToken) => {
   const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
   const [error, setError] = useState("");

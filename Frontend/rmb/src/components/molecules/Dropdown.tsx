@@ -9,7 +9,7 @@ interface DropdownProps {
   items: MenuItem[];
   triggerElement: React.ReactNode;
 }
-
+// header dropdown component
 const Dropdown = ({ items, triggerElement }: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
