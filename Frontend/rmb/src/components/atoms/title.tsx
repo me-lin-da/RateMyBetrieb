@@ -7,7 +7,7 @@ const Title = ({ companyName, description }: TitleProps) => {
   return (
     <div className="m-auto items-center">
       <h2 className="text-4xl font-bold text-white">{companyName}</h2>
-      <p>{description}</p>
+      <p className="text-white">{description}</p>
     </div>
   );
 };
