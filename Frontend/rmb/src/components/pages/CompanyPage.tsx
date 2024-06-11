@@ -25,7 +25,7 @@ const CompanyPage = () => {
   return (
     <div className="container mx-auto px-4 bg-gray-400 h-full mt-10">
       <div className="flex flex-col rounded-lg">
-        <Company />
+        <Company title="Noser Young" description="A part of the Noser Group" />
         <div className="flex flex-wrap mt-5">
           <AddComment onSubmit={handleSubmit} />
         </div>
