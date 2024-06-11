@@ -2,14 +2,28 @@ import React, { useState } from "react";
 import Button from "../atoms/button";
 import userService from "../../services/userService";
 import { UserSingIn } from "../../types/User.type";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 // the register box
 const RegisterBox: React.FC = () => {
   const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
   const [error, setError] = useState("");
+  const showToast = () => toast.success("Successfully registered");
+  const showToastnegative = () => toast.error("Can't register your user");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    userService.register(user);
+
+    userService
+      .register(user)
+      .then(() => {
+        showToast();
+      })
+      .catch((err) => {
+        if (axios.isAxiosError(err)) {
+          showToastnegative();
+        }
+      });
   };
   return (
     <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
@@ -47,6 +61,7 @@ const RegisterBox: React.FC = () => {
         </div>
         <div className="flex justify-center">
           <Button label="Register" onSubmit={handleSubmit} />
+          <Toaster />
         </div>
       </form>
     </div>

@@ -2,10 +2,14 @@ import React, { useState } from "react";
 import Button from "../atoms/button";
 import userService from "../../services/userService";
 import { UserSingIn } from "../../types/User.type";
+import toast, { Toaster } from "react-hot-toast";
+
 //the login box
 const LoginBox: React.FC = (setToken) => {
   const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
   const [error, setError] = useState("");
+  const showToast = () => toast.success("Successfully logged in");
+  const showToastnegative = () => toast.error("Can't register your user");
 
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault();
@@ -20,6 +24,7 @@ const LoginBox: React.FC = (setToken) => {
         : authHeader;
       localStorage.setItem("userAuthToken", token);
     } else {
+      showToastnegative();
       throw new Error("Authorization token not found in response headers");
     }
   }
@@ -59,7 +64,8 @@ const LoginBox: React.FC = (setToken) => {
           />
         </div>
         <div className="flex justify-center">
-          <Button label="Login" onSubmit={handleSubmit} />
+          <Button onClick={showToast} label="Login" onSubmit={handleSubmit} />
+          <Toaster />
         </div>
       </form>
     </div>

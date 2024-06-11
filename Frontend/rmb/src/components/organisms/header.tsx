@@ -8,7 +8,7 @@ const Header = () => {
   const OnSearch = () => {};
 
   const menuItems = [
-    { label: "Celine Sinzig", link: "/" },
+    { label: "Register", link: "/register" },
     { label: "Log In", link: "/login" },
   ];
   const imageTrigger = (
@@ -18,7 +18,7 @@ const Header = () => {
       alt="Logo"
     />
   );
-// the header
+  // the header
   return (
     <header className="bg-secondary py-4">
       <div className="container mx-auto flex justify-between">
