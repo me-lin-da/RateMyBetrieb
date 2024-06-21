@@ -19,7 +19,7 @@ const Card = ({
   rating,
 }: CardProps) => {
   return (
-    <a href="/CompanyPage">
+    <a href={`/CompanyPage/${companyName}`}>
       <div>
         <div className="flex flex-row bg-main rounded-lg">
           <Logo photosrc={photosrc} alt={alt} />

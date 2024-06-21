@@ -26,8 +26,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setAuthToken(token);
   }, []);
 
-  console.log(authToken);
-
   return (
     <AuthContext.Provider value={{ authToken }}>
       {children}
@@ -37,7 +35,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
 export const useAuth = (): string | void => {
   const context = localStorage.getItem("userAuthToken");
-  console.log(AuthContext);
   if (!context) {
     return window.location.assign("/login");
   }

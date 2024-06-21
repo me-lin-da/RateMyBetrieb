@@ -22,7 +22,7 @@ function App() {
           }
         />
         <Route
-          path="/CompanyPage"
+          path="/CompanyPage/*"
           element={
             <ProtectedRoute>
               <CompanyPage />

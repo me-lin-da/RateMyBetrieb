@@ -4,6 +4,7 @@ import userService from "../../services/userService";
 import { UserSingIn } from "../../types/User.type";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import { wait } from "@testing-library/user-event/dist/utils";
 // the register box
 const RegisterBox: React.FC = () => {
   const [user, setUser] = useState<UserSingIn>({ email: "", password: "" });
@@ -24,7 +25,9 @@ const RegisterBox: React.FC = () => {
           showToastnegative();
         }
       });
-    window.location.assign("/login");
+    setTimeout(() => {
+      window.location.assign("/login");
+    }, 1000);
   };
   return (
     <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">

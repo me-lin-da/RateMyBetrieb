@@ -20,8 +20,9 @@ const CompanyList = () => {
     const fetchCompanies = async () => {
       try {
         const response = await companyService.getAllCompany();
+        console.log("sinzc response", response);
         setCompanies(response.data);
-        console.log(response);
+        console.log("sinzc", response.data);
       } catch (err) {
         setError("Failed to fetch companies");
       } finally {

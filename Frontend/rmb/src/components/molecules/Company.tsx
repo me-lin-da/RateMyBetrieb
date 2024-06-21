@@ -10,13 +10,7 @@ interface CompanyProps {
 const Company = ({ title, description, rating, logo }: CompanyProps) => {
   return (
     <div className="bg-main w-full flex flex-row p-8 gap-8 rounded-2xl">
-      <div className="shrink-0">
-        <img
-          src={logo}
-          className="aspect-square h-96 w-auto object-contain"
-          alt="elhu"
-        />
-      </div>
+      <div className="shrink-0"></div>
       <div className="flex flex-col gap-8">
         <h1 className="text-7xl -ml-1 text-white font-bold">{title}</h1>
         <div className="text-white text-xl">

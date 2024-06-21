@@ -9,10 +9,7 @@ interface ProtectedRouteProps {
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const authToken = useAuth();
 
-  console.log(authToken);
-
   if (!authToken) {
-    console.log("DINNE");
     return <Navigate to="/Login" />;
   }
 
