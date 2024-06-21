@@ -24,6 +24,7 @@ const RegisterBox: React.FC = () => {
           showToastnegative();
         }
       });
+    window.location.assign("/login");
   };
   return (
     <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">

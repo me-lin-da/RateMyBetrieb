@@ -27,6 +27,7 @@ const LoginBox: React.FC = (setToken) => {
       showToastnegative();
       throw new Error("Authorization token not found in response headers");
     }
+    window.location.assign("/");
   }
 
   return (
@@ -65,6 +66,9 @@ const LoginBox: React.FC = (setToken) => {
         </div>
         <div className="flex justify-center">
           <Button onClick={showToast} label="Login" onSubmit={handleSubmit} />
+          <a style={{ marginTop: 20, marginLeft: 50 }} href="/register">
+            Register
+          </a>
           <Toaster />
         </div>
       </form>

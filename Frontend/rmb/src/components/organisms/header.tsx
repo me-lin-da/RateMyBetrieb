@@ -7,10 +7,7 @@ import Dropdown from "../molecules/Dropdown";
 const Header = () => {
   const OnSearch = () => {};
 
-  const menuItems = [
-    { label: "Register", link: "/register" },
-    { label: "Log In", link: "/login" },
-  ];
+  const menuItems = [{ label: "Log In", link: "/login" }];
   const imageTrigger = (
     <img
       src={Account}

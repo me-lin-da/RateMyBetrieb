@@ -5,6 +5,8 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
+import { Navigate } from "react-router-dom";
+import { api } from "../services/api.service";
 
 interface AuthContextType {
   authToken: string | null;
@@ -33,11 +35,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   );
 };
 
-export const useAuth = (): string => {
+export const useAuth = (): string | void => {
   const context = localStorage.getItem("userAuthToken");
   console.log(AuthContext);
   if (!context) {
-    throw new Error("useAuth must be used within an AuthProvider");
+    return window.location.assign("/login");
   }
   return context;
 };

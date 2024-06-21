@@ -21,6 +21,11 @@ const Dropdown = ({ items, triggerElement }: DropdownProps) => {
     toggleDropdown();
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("userAuthToken");
+    window.location.assign("/login");
+  };
+
   return (
     <div className="relative inline-block text-left">
       <div onClick={toggleDropdown}>{triggerElement}</div>
@@ -39,6 +44,13 @@ const Dropdown = ({ items, triggerElement }: DropdownProps) => {
                 </button>
               </a>
             ))}
+            <button
+              key={"logout"}
+              onClick={() => handleLogout()}
+              className="block px-4 py-2 text-sm text-secondary w-full text-left bg-main duration-300 hover:bg-secondary hover:text-main"
+            >
+              {"Log out"}
+            </button>
           </div>
         </div>
       )}
