@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../atoms/logo";
 import Title from "../atoms/title";
-import Rating from "../atoms/rating";
 
 interface CardProps {
   photosrc?: string;
@@ -25,9 +24,7 @@ const Card = ({
           <Logo photosrc={photosrc} alt={alt} />
           <Title companyName={companyName} description={description} />
           <div className="m-auto items-end">
-            <p className="text-white">
-              Rating: <Rating rating={rating} /> /10
-            </p>
+            <p className="text-white">Rating: 7/10</p>
           </div>
         </div>
       </div>

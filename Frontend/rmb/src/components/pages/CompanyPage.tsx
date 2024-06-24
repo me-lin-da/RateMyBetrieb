@@ -4,6 +4,7 @@ import Comment from "../molecules/Comment";
 import AddComment from "../../components/molecules/AddComment";
 import companyService from "../../services/companyService";
 import toast from "react-hot-toast";
+import reviewService from "../../services/review.service";
 
 interface CompanyProps {
   photosrc?: string;
@@ -13,11 +14,34 @@ interface CompanyProps {
   rating?: number;
 }
 
+interface ReviewProps {
+  id: string;
+  title: string;
+  text: string;
+  company: CompanyProps;
+  createdAt: string | null;
+  createdBy: string | null;
+  lastModifiedBy: string | null;
+  modifiedAt: string | null;
+  // Add other relevant fields
+}
+
 const CompanyPage = () => {
   const [company, setCompany] = useState<CompanyProps | null>(null);
+  const [reviews, setReviews] = useState([]);
+
   let url: any = window.location.href;
   url = url.split("/");
 
+  const fetchReviews = async () => {
+    try {
+      const response = await reviewService.getAllReviews();
+      console.log("Fetched reviews:", response.data); // Log the fetched data
+      setReviews(response.data);
+    } catch (error) {
+      console.error("Error fetching reviews:", error);
+    }
+  };
   useEffect(() => {
     const fetchCompanies = async () => {
       try {
@@ -38,7 +62,8 @@ const CompanyPage = () => {
     };
 
     fetchCompanies();
-  }, [url]);
+    fetchReviews();
+  }, []);
 
   const handleSubmit = (comment: string) => {
     console.log("Submitted comment:", comment);
@@ -58,18 +83,15 @@ const CompanyPage = () => {
         <div className="flex flex-wrap mt-5">
           <AddComment onSubmit={handleSubmit} />
         </div>
-        <div className="flex flex-wrap gap-4 mt-5">
-          <div className="flex flex-row flex-wrap rounded-lg w-1/3">
-            <Comment />
-          </div>
-          <div className="flex flex-row flex-wrap rounded-lg w-1/3">
-            <Comment />
-          </div>
-          <div className="flex flex-row flex-wrap rounded-lg w-1/3">
-            <Comment />
-          </div>
-        </div>
       </div>
+      {reviews.map((review: ReviewProps) => (
+        <Comment
+          key={review.id}
+          name={review.title}
+          commentText={review.text}
+          rating={Math.floor(Math.random() * 10) + 1}
+        />
+      ))}
     </div>
   );
 };

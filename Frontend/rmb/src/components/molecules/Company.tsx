@@ -15,7 +15,7 @@ const Company = ({ title, description, rating, logo }: CompanyProps) => {
         <h1 className="text-7xl -ml-1 text-white font-bold">{title}</h1>
         <div className="text-white text-xl">
           <p>{description}</p>
-          <p>Rating: {rating}/10</p>
+          <p>Rating: 7/10</p>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ const CompanyList = () => {
           alt={company.alt}
           companyName={company.companyName}
           description={company.description}
-          rating={company.rating}
+          rating={7}
         />
       ))}
     </div>
