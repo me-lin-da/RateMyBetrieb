@@ -37,7 +37,7 @@ const CompanyList = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-6">
       {companies.map((company, index) => (
         <Card
           key={index}

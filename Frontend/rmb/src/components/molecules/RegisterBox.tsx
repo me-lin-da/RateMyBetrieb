@@ -30,7 +30,7 @@ const RegisterBox: React.FC = () => {
     }, 1000);
   };
   return (
-    <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
+    <div className="relative bg-gray-400 w-2/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
       <form
         onSubmit={handleSubmit}
         className="bg-main text-white p-8 rounded-lg shadow-md"

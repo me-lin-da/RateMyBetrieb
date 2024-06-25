@@ -31,7 +31,7 @@ const LoginBox: React.FC = (setToken) => {
   }
 
   return (
-    <div className="relative bg-gray-400 w-1/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
+    <div className="relative bg-gray-400 w-2/5 mx-auto h-full rounded-2xl border-none mt-10 shadow-2xl shadow-gray-800">
       <form
         onSubmit={handleSubmit}
         className="bg-main text-white p-8 rounded-lg shadow-md"
@@ -64,9 +64,9 @@ const LoginBox: React.FC = (setToken) => {
             className="w-full px-3 py-2 border rounded-md focus:border-third text-black"
           />
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center flex-row gap-5">
           <Button onClick={showToast} label="Login" onSubmit={handleSubmit} />
-          <a style={{ marginTop: 20, marginLeft: 50 }} href="/register">
+          <a href="/register" className="my-auto">
             Register
           </a>
           <Toaster />

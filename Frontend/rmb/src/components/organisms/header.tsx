@@ -28,9 +28,6 @@ const Header = () => {
             />
           </a>
         </div>
-        <div className="flex-grow mx-8">
-          <SearchBar onSearch={OnSearch} />
-        </div>
         <Dropdown items={menuItems} triggerElement={imageTrigger} />
       </div>
     </header>

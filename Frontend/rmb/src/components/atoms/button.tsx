@@ -9,7 +9,7 @@ interface ButtonProps {
 const Button = ({ onClick, label }: ButtonProps) => {
   return (
     <button
-      className="w-1/5 mt-2 bg-secondary text-white py-2 rounded-md hover:bg-third transition duration-300"
+      className="w-1/5 bg-secondary text-white py-2 rounded-md hover:bg-third transition duration-300"
       onClick={onClick}
     >
       {label}

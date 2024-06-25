@@ -20,10 +20,10 @@ const Card = ({
   return (
     <a href={`/CompanyPage/${companyName}`}>
       <div>
-        <div className="flex flex-row bg-main rounded-lg">
+        <div className="flex flex-row bg-main rounded-lg p-8">
           <Logo photosrc={photosrc} alt={alt} />
           <Title companyName={companyName} description={description} />
-          <div className="m-auto items-end">
+          <div className="m-auto items-end shrink-0">
             <p className="text-white">Rating: 7/10</p>
           </div>
         </div>

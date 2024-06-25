@@ -9,8 +9,7 @@ interface CommentProps {
 const Comment = ({ name, commentText, rating }: CommentProps) => {
   return (
     <div
-      style={{ marginTop: 50 }}
-      className="flex flex-col p-8 bg-main rounded-2xl border-none shadow-2xl shadow-gray-8008"
+      className="flex flex-col p-8 bg-main rounded-2xl border-none shadow-2xl shadow-gray-8008 mt-3"
     >
       <h1 className="text-white font-bold text-xl">{name}</h1>
       <div className="text-white">
